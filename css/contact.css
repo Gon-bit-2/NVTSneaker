@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "iran_sans_bold";
+  src: url("../Fonts/iran_sans_bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iran_sans_light";
+  src: url("../Fonts/iran_sans_light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iran_sans_medi";
+  src: url("../Fonts/iran_sans_medi.woff") format("woff");
+}
+* {
+  font-family: iran_sans_light;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+body {
+  background: rgba(247, 244, 244, 0.5);
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: 1rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  width: 15rem;
+  height: 8rem;
+  /* background: url("../Images/logo.png") no-repeat; */
+}
+header .navbar a {
+  font-size: 1.5rem;
+  color: #000;
+  margin: 0 2rem;
+}
+header .navbar a:hover {
+  color: orangered;
+}
+header .icons a {
+  font-size: 2rem;
+  color: #000;
+  margin-left: 1.5rem;
+}
+header .icons a:hover {
+  color: orangered;
+}
+#menu-bar {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #000;
+  color: #000;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: none;
+}
+/*  */
+.container-11 {
+  margin-top: 5rem;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/contact/bgr.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-box {
+  width: 500px;
+  margin: 50px auto;
+  background-image: linear-gradient(
+    rgba(30, 30, 252, 0.4),
+    rgba(255, 99, 71, 0.4)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 10px; /* Bo góc */
+  padding: 20px; /* Khoảng cách bên trong */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ nhẹ */
+}
+
+.container-11 .form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ede3e3;
+}
+
+.container-11 .form-group_11 {
+  margin-bottom: 20px;
+}
+
+.form-group_11 label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group_11 input,
+.form-group_11 textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.form-group_11 input[type="tel"] {
+  margin-bottom: 20px;
+}
+.form-group_11 textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.btn-11 {
+  background-color: #4e90ec;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-11:hover {
+  background-color: #4116eb;
+}

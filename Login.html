@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/stylelogin.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="from-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="register()">
+            Register
+          </button>
+        </div>
+        <div class="social-icon">
+          <img src="img/login/Facebook.png" />
+          <img src="img/login/google.png" />
+          <img src="img/login/tw.png" />
+        </div>
+        <form id="login" class="input-gruop" action="">
+          <input
+            type="text"
+            class="input-field"
+            id="loginUsername"
+            placeholder="User id "
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            id="loginPassword"
+            placeholder="Enter password "
+            required
+          />
+          <input type="checkbox" class="check-box" />
+          <span>Remember Password </span>
+          <button type="submit" class="submit-btn">Log in</button>
+        </form>
+        <form id="register" class="input-gruop" action="">
+          <input
+            type="text"
+            class="input-field"
+            id="username"
+            placeholder="User id "
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            id="email"
+            placeholder="Email id "
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            id="password"
+            placeholder="Enter password "
+            required
+          />
+          <input type="checkbox" class="check-box" />
+          <span>I agree to the terms </span>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+
+      function register() {
+        // x.style.left = "-400px";
+        // y.style.left = "50px";
+        z.style.left = "110px";
+        // console.log("Hello");
+        x.style.display = "none";
+        y.style.display = "inline";
+      }
+
+      function login() {
+        // x.style.left = "50px";
+        // y.style.left = "550px";
+        z.style.left = "0px";
+        x.style.display = "inline";
+        y.style.display = "none";
+      }
+
+      //
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbw-EC63eQBUIfcl2YJaS2Zu-LpMq4eQHSI5xQYMv8pyXFZCO3gZzZ3kdJtqVzi--J6dIw/exec"; // URL web app
+      // Xử lý đăng ký
+      document
+        .getElementById("register")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          };
+
+          fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              alert(data); // Thông báo kết quả đăng ký
+            });
+        });
+
+      // Xử lý đăng nhập
+      document.getElementById("login").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = {
+          username: document.getElementById("loginUsername").value,
+          password: document.getElementById("loginPassword").value,
+        };
+
+        fetch(`${scriptURL}?data=${encodeURIComponent(JSON.stringify(data))}`, {
+          method: "GET",
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            alert(data); // Thông báo kết quả đăng nhập
+          });
+      });
+    </script>
+  </body>
+</html>
